@@ -1,0 +1,9 @@
+function [c,ceq] = mycon_LNN(tau,beta)
+%     lambda = beta(4,:);
+%     kk = beta(end,:);
+%     h = lambda' * position_error + kk'
+    w = beta(1,:);
+    rau = beta(2,:);
+    cw = abs(w) - 1/tau;
+    c = [cw, rau .* w];
+    ceq =[];
